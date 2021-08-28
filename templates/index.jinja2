@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH Log Viewer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/dataTables.bootstrap5.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script scr="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+
+<div class="row">
+            <h2>CH Log Viewer</h2>
+        </div>
+        <br>
+        <div class="row">
+            <table id="logs">
+                <thead>
+                    <tr>
+                        <th>DT</th>
+                        <th>Name</th>
+                        <th>Message</th>
+                        <th>Levelname</th>
+                        <th>Pathname</th>
+                        <th>Filename</th>
+                        <th>Module</th>
+                        <th>Line No</th>
+                        <th>Funcname</th>
+                    </tr>
+                    <tbody>
+                        {% for item in data %}
+                            <tr>
+                                <td>{{ item.dt }}</td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.msg }}</td>
+                                <td>{{ item.levelname }}</td>
+                                <td>{{ item.pathname }}</td>
+                                <td>{{ item.filename }}</td>
+                                <td>{{ item.module }}</td>
+                                <td>{{ item.lineno }}</td>
+                                <td>{{ item.funcName }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+    
+    <script>
+    $(document).ready(function() {
+        $('#logs').DataTable();
+    } );
+    </script>
+</body>
+</html>
