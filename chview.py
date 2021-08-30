@@ -62,12 +62,9 @@ class Desire_Logs(BaseModel):
         )
 
 
-def query_select(limit=10, offset=0):
-    return f'SELECT * FROM {CH_TABLE} LIMIT {limit} OFFSET {offset}'
-
 
 def get_logs(limit=10):
-    rv = Desire_Logs.objects_in(Desire_Logs.db).filter().order_by('-dt')
+    rv = Desire_Logs.objects_in(Desire_Logs.db).filter().order_by('dt')
     res = list(map(lambda x: x.json, rv))
     return res
 
