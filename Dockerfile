@@ -16,6 +16,6 @@ RUN pip install -U pip --no-cache-dir && \
 	pip install --no-cache-dir -r requirements.txt
 
 COPY ./entrypoint.sh /usr/src/desire/chview/entrypoint.sh
-COPY ./src /usr/src/desire/chview
+COPY . /usr/src/desire/chview
 
 ENTRYPOINT ["/usr/src/desire/chview/entrypoint.sh"]
