@@ -17,12 +17,12 @@ from infi.clickhouse_orm import (
 )
 
 
-CH_HOST = 'desire.r-admin.ru'
-CH_PORT = 8123
-CH_USER = 'root'
-CH_PASSORD = 'password'
-CH_DB = 'clickhouse'
-CH_TABLE = 'desire_logs'
+CH_HOST = os.environ.get('CLICKHOUSE_HOST', 'desire.r-admin.ru')
+CH_PORT = os.environ.get('CLICKHOUSE_PORT', 8123)
+CH_USER = os.environ.get('CLICKHOUSE_USER', 'root')
+CH_PASSORD = os.environ.get('CLICKHOUSE_PASSWORD', 'password')
+CH_DB = os.environ.get('CLICKHOUSE_DB', 'clickhouse')
+CH_TABLE = os.environ.get('CLICKHOUSE_LOG_TABLE', 'desire_logs')
 
 
 class BaseModel(Model):
