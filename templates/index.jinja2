@@ -27,26 +27,26 @@
                 <thead>
                     <tr>
                         <th>DT</th>
-                        <th>Name</th>
-                        <th>Message</th>
                         <th>Levelname</th>
+                        <th>Message</th>
+                        <th>Name</th>
+                        <th>Line No</th>
                         <th>Pathname</th>
                         <th>Filename</th>
                         <th>Module</th>
-                        <th>Line No</th>
                         <th>Funcname</th>
                     </tr>
                     <tbody>
                         {% for item in data %}
                             <tr>
                                 <td>{{ item.dt }}</td>
-                                <td>{{ item.name }}</td>
-                                <td>{{ item.msg }}</td>
                                 <td>{{ item.levelname }}</td>
+                                <td>{{ item.msg }}</td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.lineno }}</td>
                                 <td>{{ item.pathname }}</td>
                                 <td>{{ item.filename }}</td>
                                 <td>{{ item.module }}</td>
-                                <td>{{ item.lineno }}</td>
                                 <td>{{ item.funcName }}</td>
                             </tr>
                         {% endfor %}
