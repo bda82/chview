@@ -15,7 +15,7 @@ services:
       dockerfile: Dockerfile
     command: run
     volumes:
-      - ./src:/usr/src/desire/chview
+      - ./:/usr/src/desire/chview
     ports:
       - "9999:8080"
     networks:

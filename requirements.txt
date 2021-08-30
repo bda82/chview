@@ -14,3 +14,4 @@ typing-extensions==3.10.0.0
 tzlocal==2.1
 watchdog==2.1.5
 yarl==1.6.3
+infi.clickhouse-orm==2.1.0
